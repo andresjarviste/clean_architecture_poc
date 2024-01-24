@@ -4,11 +4,11 @@ export default class Product {
     public name: string,
     public description: string,
     public price: number,
-    public available: boolean
+    public available: boolean,
+	  public inStock: number,
   ) {}
 
   canBePurchased(): boolean {
     return this.available && this.price > 0;
   }
 }
-

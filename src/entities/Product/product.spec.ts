@@ -1,4 +1,4 @@
-import Product from './product';
+import Product from './Product';
 
 describe('Product', () => {
 	test('should create Product that can be purchased', () => {
