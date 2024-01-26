@@ -7,7 +7,8 @@ describe('Product', () => {
 			'apple',
 			'common fruit',
 			9.99,
-			true
+			true,
+			10
 		);
 		expect(product.canBePurchased()).toBeTruthy();
 	});
@@ -17,7 +18,8 @@ describe('Product', () => {
 			'orange',
 			'common fruit',
 			2,
-			false
+			false,
+			10
 		);
 		expect(product.canBePurchased()).toBeFalsy();
 	});
