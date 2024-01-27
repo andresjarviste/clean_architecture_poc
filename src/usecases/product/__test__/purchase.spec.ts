@@ -1,7 +1,7 @@
 import Product from "../../../entities/Product/Product";
 import Account from "../../../entities/Account/Account";
 import ProductRepositoryMock from "../../test/ProductRepositoryMock";
-import { purchase, DTOProduct } from "../purchase";
+import { purchase } from "../purchase";
 import Transaction from "../../../entities/Transaction/Transaction";
 
 const TEST_PRODUCT_ID = "98";

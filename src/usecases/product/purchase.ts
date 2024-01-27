@@ -1,9 +1,7 @@
 import ProductRepositoryInterface from '../interfaces/ProductRepositoryInterface';
-import Product from '../../entities/Product/Product';
-import Account from '../../entities/Account/Account';
 import Transaction from '../../entities/Transaction/Transaction';
 
-export type DTOProduct = {
+export type DTOTransaction = {
 	productId: string,
 	accountId: string,
 	amount: number
@@ -11,7 +9,7 @@ export type DTOProduct = {
 
 export const purchase = function <T extends ProductRepositoryInterface>(
 	repository: T,
-	purchase: DTOProduct
+	purchase: DTOTransaction
 ): Transaction | null {
 	const product = repository.getProductById(purchase.productId);
 	const account = repository.getAccountById(purchase.accountId);
