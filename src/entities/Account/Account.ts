@@ -1,7 +1,7 @@
 
 export default class Account {
   constructor(
-    public id: number,
+    public id: string,
     public firsName: string,
     public lastName: string,
     public created: Date
