@@ -7,7 +7,8 @@
 		"build": "tsc",
 		"pretest": "npm run build",
 		"test": "jest",
-		"add_product": "npm run build&&node  .\\dist\\commands.js"
+		"add_product": "node  ./dist/interfaces/terminal/add_product.js",
+		"add_account": "node  ./dist/interfaces/terminal/add_account.js"
 	},
 	"keywords": [],
 	"author": "",

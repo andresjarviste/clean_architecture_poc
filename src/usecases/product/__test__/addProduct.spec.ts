@@ -1,6 +1,4 @@
-import Product from '../../../entities/Product/Product';
-import Account from '../../../entities/Account/Account';
-import ProductRepositoryMock from '../../test/ProductRepositoryMock';
+import ProductRepositoryMock from '../../mocks/ProductRepositoryMock';
 import { addProduct } from '../addProduct';
 
 describe('Add Product Use Case', () => {
