@@ -1,4 +1,4 @@
-import ProductRepositoryInterface from '../interfaces/ProductRepositoryInterface';
+import ProductRepositoryInterface from '../__interfaces__/ProductRepositoryInterface';
 import Transaction from '../../entities/Transaction/Transaction';
 
 export type DTOTransaction = {

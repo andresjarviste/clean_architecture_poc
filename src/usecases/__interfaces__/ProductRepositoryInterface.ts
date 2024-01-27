@@ -6,6 +6,7 @@ export default interface ProductRepositoryInterface {
 	addProduct(product: Product): void;
 	updateProduct(product: Product): void;
 
+	getAllProducts(): Product[];
 	getProductById(id: string): Product | null;
 
 	addAccount(account: Account): void;

@@ -1,4 +1,4 @@
-import ProductRepositoryInterface from '../interfaces/ProductRepositoryInterface';
+import ProductRepositoryInterface from '../__interfaces__/ProductRepositoryInterface';
 import Account from '../../entities/Account/Account';
 import { v4 as uuid } from 'uuid';
 

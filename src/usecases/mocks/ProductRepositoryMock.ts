@@ -1,7 +1,7 @@
 import Product from "../../entities/Product/Product";
 import Account from "../../entities/Account/Account";
 import Transaction from "../../entities/Transaction/Transaction";
-import ProductRepositoryInterface from "../interfaces/ProductRepositoryInterface";
+import ProductRepositoryInterface from "../__interfaces__/ProductRepositoryInterface";
 
 export default class ProductRepositoryMock
 	implements ProductRepositoryInterface
@@ -15,6 +15,9 @@ export default class ProductRepositoryMock
 	}
 	updateProduct(product: Product): void {
 		this.addProduct(product);
+	}
+	getAllProducts() {
+		return Object.keys(this.products).map((key) => this.products[key]);
 	}
 	getProductById(id: string): Product | null {
 		return this.products[id] ?? null;

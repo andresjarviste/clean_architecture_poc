@@ -1,7 +1,7 @@
 import Product from '../entities/Product/Product';
 import Account from '../entities/Account/Account';
 import Transaction from '../entities/Transaction/Transaction';
-import ProductRepositoryInterface from '../usecases/interfaces/ProductRepositoryInterface';
+import ProductRepositoryInterface from '../usecases/__interfaces__/ProductRepositoryInterface';
 
 let products: Record<string, Product> = {};
 let accounts: Record<string, Account> = {};
@@ -18,7 +18,7 @@ export default class ProductRepositoryFile implements ProductRepositoryInterface
 		this.transactionsPath = `${this.dataPath}/transactions.json`;
 		products = this.readProducts();
 		accounts = this.readAccounts();
-		transactions = this.readTransactions();
+		//transactions = this.readTransactions();
 	}
 
 	writeProducts(): void {
@@ -72,6 +72,9 @@ export default class ProductRepositoryFile implements ProductRepositoryInterface
 	updateProduct (product: Product): void {
 		this.addProduct(product);
         this.writeProducts();
+	}
+	getAllProducts() {
+		return Object.keys(products).map((key) => products[key]);
 	}
 	getProductById (id: string): Product | null {
 		return products[id] ?? null;
