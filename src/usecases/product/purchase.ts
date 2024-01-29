@@ -1,10 +1,10 @@
-import ProductRepositoryInterface from '../__interfaces__/ProductRepositoryInterface';
-import Transaction from '../../entities/Transaction/Transaction';
+import ProductRepositoryInterface from "../__interfaces__/ProductRepositoryInterface";
+import Transaction from "../../entities/Transaction/Transaction";
 
 export type DTOTransaction = {
-	productId: string,
-	accountId: string,
-	amount: number
+	productId: string;
+	accountId: string;
+	amount: number;
 };
 
 export const purchase = function <T extends ProductRepositoryInterface>(
@@ -15,10 +15,12 @@ export const purchase = function <T extends ProductRepositoryInterface>(
 	const account = repository.getAccountById(purchase.accountId);
 
 	if (!product || !account) {
+		console.log("product or account not found");
 		return null;
 	}
 
-	product?.addToStock(purchase.amount);
+	product.addToStock(purchase.amount * -1);
+	repository.updateProduct(product);
 
 	const transaction = new Transaction(
 		null,
@@ -28,5 +30,7 @@ export const purchase = function <T extends ProductRepositoryInterface>(
 		account
 	);
 
-	return transaction	
-}
+	repository.addTransaction(transaction);
+
+	return transaction;
+};

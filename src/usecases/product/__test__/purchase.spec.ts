@@ -35,6 +35,6 @@ describe("Purchase Use Case", () => {
 		});
 
 		expect(result).toBeInstanceOf(Transaction);
-		expect(product.inStock).toBe(12);
+		expect(product.inStock).toBe(8);
 	});
 });

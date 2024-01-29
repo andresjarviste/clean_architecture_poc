@@ -1,12 +1,11 @@
-import {WebApp, createServer} from './adapters/web/express';
+import {createServer} from './adapters/express/express';
 import ProductRepositoryFile from './repositories/ProductRepositoryFile';
 
 const startServer = () => {
     const productRepo = new ProductRepositoryFile(__dirname + '/adapters/terminal');
-    const webApp = createServer();
-    webApp.addProductRepository(productRepo);
+    const app = createServer(productRepo);
 
-    webApp.app.listen(3000, () => {
+    app.listen(3000, () => {
         console.log('Webapp is up and running on port 3000');
     })
 }
