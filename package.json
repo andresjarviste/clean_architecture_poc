@@ -11,7 +11,8 @@
 		"start": "node ./dist/index.js",
 		"add_product": "node ./dist/adapters/terminal/add_product.js",
 		"add_account": "node ./dist/adapters/terminal/add_account.js",
-		"show_products": "node ./dist/adapters/terminal/show_products.js"
+		"show_products": "node ./dist/adapters/terminal/show_products.js",
+		"show_transactions": "node ./dist/adapters/terminal/show_transactions.js"
 	},
 	"keywords": [],
 	"author": "",

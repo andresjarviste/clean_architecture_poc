@@ -1,7 +1,7 @@
 import { command, run, string, number, option } from "cmd-ts";
 import ProductRepositoryFile from "../../repositories/ProductRepositoryFile";
 import { getProducts } from "../../usecases/product/getProducts";
-import { productInTerminal } from './types' 
+import { ProductInTerminal } from './types' 
 import {presentProducts} from './views/present_products'
 
 const app = command({

@@ -1,4 +1,4 @@
-import { productInTerminal } from '../types'
+import { ProductInTerminal } from '../types'
 
 function outputRow(name: string, price: string, stock: string) {
     const nameLength = 30;
@@ -15,7 +15,7 @@ function outputRow(name: string, price: string, stock: string) {
     console.log('-'.padEnd(nameLength+priceLength+stockLength+1, '-'))
 }
 
-export const presentProducts = (products: productInTerminal[]) => {
+export const presentProducts = (products: ProductInTerminal[]) => {
     outputRow('Product name', 'price', 'in stock');
     products.forEach((p) => {
         outputRow(p.name, p.sellingPrice.toString(), p.amountInStock.toString());
