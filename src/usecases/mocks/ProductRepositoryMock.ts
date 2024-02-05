@@ -13,9 +13,6 @@ export default class ProductRepositoryMock
 	addProduct(product: Product): void {
 		this.products[product.id] = product;
 	}
-	updateProduct(product: Product): void {
-		this.addProduct(product);
-	}
 	getAllProducts() {
 		return Object.keys(this.products).map((key) => this.products[key]);
 	}
@@ -27,6 +24,9 @@ export default class ProductRepositoryMock
 	}
 	getAccountById(id: string): Account | null {
 		return this.accounts[id] ?? null;
+	}
+	updateProduct(product: Product): void {
+		this.addProduct(product);
 	}
 	addTransaction(transaction: Transaction): Transaction {
 		const id = this.transactions.length;

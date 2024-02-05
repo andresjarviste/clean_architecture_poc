@@ -15,7 +15,6 @@ export default class ProductsPresenter {
 		res.send(getProducts(this.productRepository));
 	}
 	makePurchase(req: Request<any, any, any, TransactionParams>, res: Response) {
-		console.log( req.body)
 		res.send(purchase(
 			this.productRepository, {
 				productId: req.body.productId,

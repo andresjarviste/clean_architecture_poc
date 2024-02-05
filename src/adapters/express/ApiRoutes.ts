@@ -16,11 +16,6 @@ export default class ApiRoutes {
 			this.presenter.presentProducts(req, res);
 		});
 		this.router.post('/transaction', (req: Request<any, any, any, TransactionParams>, res: Response) => this.presenter.makePurchase(req, res));
-		this.router.post('/test', (req: Request, res: Response) => {
-			console.log(req.params);
-			console.log(req.query);
-			console.log(req.body);
-		});
 	}
 
 }
