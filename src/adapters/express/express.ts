@@ -1,14 +1,15 @@
 import express from "express";
 import cors from "cors";
 import ProductRepositoryInterface from "../../usecases/__interfaces__/ProductRepositoryInterface";
-import ApiRoutes from "./ApiRoutes";
-import ProductsPresenter from "./ProductsPresenter";
+import ApiRoutesAPI from "./ApiRoutesAPI";
+import ApiRoutesHTML from "./ApiRoutesHTML";
+import ProductsController from "./ProductsController";
 
 export const createServer = <T extends ProductRepositoryInterface>(
 	repository: T
 ): express.Application => {
 	const app = express();
-	const presenter = new ProductsPresenter(repository);
+	const presenter = new ProductsController(repository);
 
 	app.use(express.urlencoded({ extended: true }));
 	app.use(cors());
@@ -18,7 +19,8 @@ export const createServer = <T extends ProductRepositoryInterface>(
 		res.send("server is UP !!!");
 	});
 
-	app.use("/api", new ApiRoutes(presenter).router);
+	app.use("/api", new ApiRoutesAPI(presenter).router);
+	app.use("/shop", new ApiRoutesHTML(presenter).router);
 
 	return app;
 };

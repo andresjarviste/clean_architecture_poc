@@ -2,7 +2,7 @@ import { command, run, string, number, option } from "cmd-ts";
 import ProductRepositoryFile from "../../repositories/ProductRepositoryFile";
 import { getAllPurchases } from "../../usecases/product/purchase";
 import { TransactiontInTerminal } from "./types";
-import { presentTransactions } from "./views/present_transactions";
+import { presentTransactions } from "./presenters/present_transactions";
 
 const app = command({
 	name: "show_transactions",

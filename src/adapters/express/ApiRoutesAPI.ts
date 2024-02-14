@@ -1,11 +1,11 @@
 import { Router, Request, Response } from 'express'
-import ProductsPresenter, { TransactionParams} from './ProductsPresenter';
+import ProductsController, { TransactionParams} from './ProductsController';
+import { WebOutputType } from './ProductsController';
 
-
-export default class ApiRoutes {
+export default class ApiRoutesAPI {
 	public router: Router;
 	
-	constructor(private presenter: ProductsPresenter) {
+	constructor(private presenter: ProductsController) {
 		this.router = Router();
 		this.presenter = presenter;
 		this.registerRoutes();
@@ -13,7 +13,7 @@ export default class ApiRoutes {
 
 	protected registerRoutes(): void {
 		this.router.get('/products', (req, res) => {
-			this.presenter.presentProducts(req, res);
+			this.presenter.showProducts(req, res, WebOutputType.api);
 		});
 		this.router.post('/transaction', (req: Request<any, any, any, TransactionParams>, res: Response) => {
 			this.presenter.makePurchase(req, res)

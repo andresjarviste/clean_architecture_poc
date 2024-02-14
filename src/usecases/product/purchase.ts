@@ -1,20 +1,11 @@
 import ProductRepositoryInterface from "../__interfaces__/ProductRepositoryInterface";
 import Transaction from "../../entities/Transaction/Transaction";
+import TransactionPresentationInterface, {TransactionOutput} from "../__interfaces__/TransactionPresentationInterface";
 
 export type DTOTransaction = {
 	productId: string;
 	accountId: string;
 	amount: number;
-};
-
-export type APIPurchase = {
-	transactionId: string,
-	productId: string;
-	productName: string;
-	accountId: string;
-	accountName: string;
-	amount: number;
-	date: Date;
 };
 
 export const purchase = function <T extends ProductRepositoryInterface>(
@@ -47,8 +38,8 @@ export const purchase = function <T extends ProductRepositoryInterface>(
 
 export const getAllPurchases = function <T extends ProductRepositoryInterface>(
 	repository: T
-): APIPurchase[] {
-	let apiPurchases = <APIPurchase[]>[];
+): TransactionOutput[] {
+	let apiPurchases = <TransactionOutput[]>[];
 
 	const purchases = repository.getTransactions();
 	if (!purchases) {

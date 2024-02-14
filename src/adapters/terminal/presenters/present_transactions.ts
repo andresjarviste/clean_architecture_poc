@@ -1,4 +1,3 @@
-import { APIPurchase } from '../../../usecases/product/purchase';
 import { TransactiontInTerminal } from '../types';
 
 function outputRow(
