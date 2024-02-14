@@ -33,3 +33,8 @@ Create ServicesPresenterAPI (and ServicesPresenterHMTL) for outer layer implemen
 
 4. Lets switch the storage medium. Replace file-based repository with SQL Light or MongoDB (or something else) for storing services data
 
+## Extras
+- What should we do to get inventory list of all products on all output devices (terminal, api, html)
+- Where and how should we add input validation and error handled?
+- What should we do to create endpoint for adding orders (transaction of multiple products/services)?
+- What should we do to get list of orders in api and terminal?  
