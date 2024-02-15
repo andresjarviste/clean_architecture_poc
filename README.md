@@ -33,3 +33,33 @@ One can easily create implementation of the same repository interface in SQL or 
 
 Presenters and Views for API and Terminal
 
+## First steps
+
+Install dependecies:
+```
+npm install
+```
+
+set up demo data, run script:
+```
+./setup_demo.sh
+```
+
+start the web server:
+```
+npm run start
+```
+
+
+check that outputs work
+api output shows products at address:
+
+[http://localhost:3000/api/products](http://localhost:3000/api/products)
+
+web output shows products report at address
+[http://localhost:3000/shop/products](http://localhost:3000/shop/products)
+
+terminal outputs products with following command
+```
+npm run show_products
+```
